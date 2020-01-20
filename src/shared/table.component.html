@@ -1,0 +1,17 @@
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th *ngFor="let header of config.fields | keys;" (sort)="onSort($event)" [sortable]="header"
+                [isSortable]="config.fields[header].sort" [ngClass]="config.fields[header].className">
+                {{header}}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let values of config.data">
+            <td *ngFor="let header of config.fields | keys" [ngClass]="config.fields[header].className"
+                (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed"
+                aria-controls="collapseExample">{{values[header]}}
+            </td>
+        </tr>
+    </tbody>
+</table>

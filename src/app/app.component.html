@@ -1,0 +1,13 @@
+<div class="main">
+    <div class="content">
+        <div ngbDropdown class="d-inline-block">
+            <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>{{selectedOne}}</button>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                <button ngbDropdownItem (click)="selectOne('generalHeaders')">General</button>
+                <button ngbDropdownItem (click)="selectOne('queHeaders')">QUE</button>
+                <button ngbDropdownItem (click)="selectOne('historyHeaders')">history</button>
+            </div>
+        </div>
+        <custom-table [config]="config"></custom-table>
+    </div>
+</div>
